@@ -1,0 +1,59 @@
+<?page title="Tic Tac Toe" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+		.btn{ background-color: red; width: 100px; height : 60px; }
+	</style>
+	<hbox pack = "end" width = "100%" >
+		<button label="Home" style = "margin: 20px" href="admin.zul"></button>
+		<button label="logout" style = "margin: 20px" href="index.zul"></button>
+	</hbox>
+	<vbox pack="center" align="center" width="100%" height="400px"
+		style="background-color: #e4ddde;"
+		apply="com.iispl.controller.EventQueueTicTacToeController">
+		<vbox align="center"
+			style="box-shadow: 5px 5px 10px 15px #dd6767" width="320px"
+			height="260px">
+			<!-- Title -->
+			<separator spacing="10px" />
+			<hbox pack="center" align="center">
+			<label id = "turnMessage" value = "Tom's Turn"/>
+				<label class="lable-hd-txt" value="TIC TAC TOE" />
+			</hbox>
+			<separator spacing="15px" bar="true" />
+			<hbox pack="center" align="center">
+				<button sclass="btn" id="b1" label = ""></button>
+				<button sclass="btn" id="b2" label = ""></button>
+				<button sclass="btn" id="b3" label = ""></button>
+				<separator />
+			</hbox>
+			<hbox>
+				<button sclass="btn" id="b4" label = ""></button>
+				<button sclass="btn" id="b5" label = ""></button>
+				<button sclass="btn" id="b6" label = ""></button>
+				<separator />
+			</hbox>
+			<hbox>
+				<button sclass="btn" id="b7" label = ""></button>
+				<button sclass="btn" id="b8" label = ""></button>
+				<button sclass="btn" id="b9" label = ""></button>
+
+			</hbox>
+		</vbox>
+		<separator spacing="20px" />
+		<hbox>
+			<button label="Reset" visible="false" id="resetGameBtn"
+				onMouseOver='Clients.showNotification("Click to restart the game", Clients.NOTIFICATION_TYPE_WARNING, null, 200, 300, 1000)'>
+			</button>
+			<!-- <button label="Pause" visible="false" id="pauseGameBtn" disabled="true"
+				onMouseOver='Clients.showNotification("Click to pause the game", Clients.NOTIFICATION_TYPE_INFO, null, 200, 300, 1000)'>
+			</button> -->
+			<button label="Start" id="startGameBtn"
+				onMouseOver='Clients.showNotification("Click to resume the game", Clients.NOTIFICATION_TYPE_INFO, null, 200, 300, 1000)'>
+			</button>
+			<button label="Resume" id="reloadGameBtn" disabled="true"
+				onMouseOver='Clients.showNotification("Click to resume the game", Clients.NOTIFICATION_TYPE_INFO, null, 200, 300, 1000)'>
+			</button>
+		</hbox>
+	</vbox>
+
+</zk>

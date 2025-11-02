@@ -1,0 +1,136 @@
+<?page title="Auto Generated index.zul"?>
+
+<vlayout>
+	<html>
+		<head>
+			<style>
+
+				body{ background-color: #b0f79c; }
+
+				span { color: #400723 ; font-weight: bold !important;
+				font-size: 22px !important; }
+
+				.tme-box { width: 150px; background-color: #f3e9e9;
+				box-shadow: 2px 2px 45px gray; color: #000000;
+				font-weight: bold; text-align: center; font-size: 20px;}
+
+				.tab { width: 400px; height: 400px; background-color:
+				pink; text-align:center; margin: 10px auto; box-shadow:
+				5px 5px 10px gray; }
+
+				#startBtn { background-color: green; }
+
+				.btn { background-color: red;}
+
+			</style>
+		</head>
+	</html>
+	<hbox pack = "end" width = "100%" >
+		<button label="Home" style = "margin: 20px" href="admin.zul"></button>
+		<button label="logout" style = "margin: 20px" href="index.zul"></button>
+	</hbox>
+	<hbox align="center" pack="center" width="100%" height="500px"
+		id="clock">
+		<tabbox>
+			<tabs>
+				<tab label="WorldClock"></tab>
+				<tab label="Stop Watch"></tab>
+				<tab label="Alarm" />
+			</tabs>
+
+			<tabpanels>
+
+				<tabpanel class = "tab">
+
+					<window title="World Clock" border="normal"
+						apply="com.iispl.clock.WorldClock">
+
+						<timer id="timer" repeats="true" delay="1000" />
+						<label value="India " />
+
+						<space />
+						<textbox id="tIndia" class="tme-box" />
+
+						<separator />
+						<label value="London " />
+						<space />
+
+						<textbox id="tUsa" class="tme-box" />
+						<separator />
+
+						<label value="New York " />
+						<space />
+
+						<textbox id="tNewYork" class="tme-box" />
+						<separator />
+
+						<label value="Tokyo " />
+						<space />
+						<textbox id="tTokyo" class="tme-box" />
+
+					</window>
+				</tabpanel>
+
+				<tabpanel class="tab">
+
+					<window apply="com.iispl.clock.StopWatchComposer">
+
+						<timer id="timer" running="false" repeats="true"
+							delay="1000" />
+
+						<textbox id="timeBox" disabled="true" sclass = "tme-box"/>
+						<separator />
+						<button id="startBtn" label="START" />
+						<space />
+						<button id="pauseBtn" label="PAUSE"
+							disabled="false" />
+						<space />
+
+						<separator />
+						<button id="resumeBtn" label="RESUME"
+							disabled="false" />
+						<space />
+
+						<button class="btn" id="stopBtn" label="STOP" />
+						<space />
+
+					</window>
+
+				</tabpanel>
+
+				<tabpanel class="tab" focus="true">
+
+					<window
+						apply="com.iispl.clock.AlarmClock">
+
+						<timer id="timer" running="false" delay="1000"
+							repeats="true" />
+
+						<timebox id="timeBox" format="hh:mm:ss a"
+							focus="true" width="200px" constraint="no empty" placeholder="Select time"/>
+
+						<space spacing="20px" />
+
+						<button label="Add" id="addAlarm" />
+
+						<separator spacing="30px" />
+
+						<listbox id="alarmList" mold="paging"
+							rows="3" emptyMessage="No alarm set">
+							<listhead>
+								<listheader label="Time" sort="auto" />
+	<listheader label="Action" sort="auto" />
+							</listhead>
+
+						</listbox>
+					</window>
+				</tabpanel>
+			</tabpanels>
+
+		</tabbox>
+
+
+
+	</hbox>
+
+</vlayout>

@@ -1,0 +1,122 @@
+<?page title="Home" contentType="text/html;charset=UTF-8"?>
+
+<zk style="margin: 0px 0px;" width="100%" height="100%">
+	<html>
+
+		
+		<![CDATA[ <head>
+
+		<style> body{ padding: 0px 0px; margin: 0px 0px; } 
+		.home-body {
+		background-image: url("image/bg-img.jpg"); background-position:
+		center; background-size: cover; background-repeat: no-repeat; //
+		z-index: -1; /* push behind content */ }
+		.z-window-noborder>.z-window-content { padding: 0px !important;
+		}
+
+		.logo-img { width: 150px; /* set equal width and height */
+		height: 150px; border-radius: 50%; /* makes it circular */
+		object-fit: cover; /* ensures the image fits properly */ border:
+		2px solid #fff; /* optional: adds border */ box-shadow: 0 0 10px
+		rgba(0,0,0,0.3); /* optional shadow */ } </style>
+
+		</head> ]]>
+		
+		
+</html>
+
+
+	<window border="none" width="100%" height="100%" style="padding:0;"
+		apply="com.iispl.controller.HomeController">
+
+		<!-- Anonymous Navbar  -->
+		<hbox width="100%" id="beforeLogin"
+			style="background-color:#2c3e50; padding:10px; color:white;"
+			align="center" spacing="20">
+
+			<!-- Left side logo -->
+			<image sclass="logo-img" src="/image/logo.png" width="50px"
+				height="50px" />
+
+			<!-- Right side menu items -->
+			<hbox hflex="1" pack="end" spacing="40px"
+				style="margin-right: 20px;">
+				<label value="Home" style="cursor:pointer;"
+					onClick='execution.sendRedirect("#")' />
+				<label value="Login" style="cursor:pointer;"
+					onClick='execution.sendRedirect("login.zul")' />
+				<label value="Signup" style="cursor:pointer;"
+					onClick='execution.sendRedirect("registration.zul")' />
+			</hbox>
+		</hbox>
+
+		<!-- Admin Navbar -->
+		<hbox id="afterLogin" width="100%"
+			style="background-color:#2c3e50; color:white; padding: 10px;"
+			align="center" spacing="20" visible="false">
+
+			<!-- Left side logo -->
+			<image src="/image/logo.png" width="50px" height="50px"
+				sclass="logo-img" />
+
+			<!-- Right side menu items -->
+			<hbox hflex="1" pack="end" spacing="40px"
+				style="margin-right: 20px;">
+				<label value="Home" style="cursor:pointer;"
+					onClick='execution.sendRedirect("#")' />
+				<label value="Calculator" style="cursor:pointer;"
+					onClick='execution.sendRedirect("calculator.zul")' />
+				<label value="Tic-Tac-Toe" style="cursor:pointer;"
+					onClick='execution.sendRedirect("tictactoe.zul")' />
+				<label value="Clock" style="cursor:pointer;"
+					onClick='execution.sendRedirect("clock.zul")' />
+
+				<label value="Logout" style="cursor:pointer;"
+					id="logout" />
+			</hbox>
+		</hbox>
+		<!-- Page content -->
+		<hbox sclass="home-body" style="background-color: pink;"
+			pack="center" align="center" width="100%" height="80%">
+			<vbox hflex="1" align = "center" pack = "center" vflex="1">
+				<label value="Welcome to the page!"
+				style="color:#fffa00; font-size:34px; font-weight: bold;" 
+				/>
+				</vbox>
+				
+			<vbox id = "userData" apply="com.iispl.controller.UserComposer" hflex="1"
+				height="100%" pack="center" align="center" visible="true" style = "background-color:red">
+			 
+				<div>
+				<textbox id = "tSearch"/>  
+				<button id = "searchBtn" label = "search"/>
+				</div> 
+
+				<!-- Load Registered User -->
+				<listbox id="userLsb" emptyMessage="No Records found"
+					mold="paging" pageSize="6" height="400px" width = "500px"
+					sizedByContent="true" checkmark="false" zindex="1">
+					<listhead>
+						<listheader label="ID" sort="auto" />
+						<listheader label="Name" sort="auto" />
+						<listheader label="Mobile No" />
+						<listheader label="Email" />
+					</listhead>
+					 <template name="model">
+						<listitem>
+								<listcell label="${each.id}" />
+							<listcell label="${each.userName }" />
+							<listcell label="${each.email }" />
+							<listcell label="${each.mobileNo }" />
+						</listitem>
+					</template> 
+				</listbox>
+
+
+			</vbox>
+			
+		</hbox>
+	</window>
+
+
+</zk>

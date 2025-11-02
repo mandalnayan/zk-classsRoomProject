@@ -1,0 +1,42 @@
+<?page title="Login" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+		.label-txt {
+			font-size: 25px !important;
+			font-weight: 500 !important;
+			color: #17bbcc;
+		}
+		.label-hd-txt {
+		font-size: 30px;
+			font-weight: bold;
+			color: #1723dd;
+		}
+		.btn-success {
+		 background-color: green;
+		 border: 1px solid black;
+		}
+	</style>
+	<vbox width="100%" height="400px" pack="center" align="center" >
+	 <window width = "400px" height = "300px" 
+	 style = "background-color: pink; box-shadow: 0px 0px 25px 10px #c3bbbb;" apply = "com.iispl.controller.ValidationComposer">
+		<!-- Title -->
+		<hbox>
+		<label sclass = "label-hd-txt" value = "Login" />
+		</hbox>
+		<separator spacing = "20px"/>
+		<!-- User name -->
+		<hbox pack="center" align="center">
+			<label sclass = "label-txt" value="Username" zclass="pe-2" />
+			<textbox id = "tUserName" constraint="no empty" placeholder="Enter user email" />
+		</hbox>
+		<separator spacing = "20px"/>
+			<!-- Password -->
+		<hbox>
+			<label sclass = "label-txt" value="Password" />
+			<textbox type="password" id = "tPassword" constraint="no empty" />
+		</hbox>
+		<separator spacing="20px"/>
+		<button id = "loginBtn" label="Login" sclass = "btn-success"/>
+</window>
+	</vbox>
+</zk>

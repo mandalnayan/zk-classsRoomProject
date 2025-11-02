@@ -1,0 +1,44 @@
+<?page title="Calculator" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hbox pack = "end" width = "100%" >
+		<button label="Home" style = "margin: 20px" href="admin.zul"></button>
+		<button label="logout" style = "margin: 20px" href="index.zul"></button>
+	</hbox>
+<window title="Calculator" border="normal" width="400px" style ="margin: 10px auto; text-align:center; background-color: pink; box-shadow: 0px 0px 25px 10px #c3bbbb; " apply = "com.iispl.controller.CalculatorComposer">
+
+<textbox id = "resultBox"/><separator/>
+
+<button id = "1" label="1" /> <space/>
+<button id = "2" label="2" /><space/>
+<button id = "3" label="3" /><space/> 
+<button id = "add" label = "+" /> <separator/>
+
+<button id = "4" label="4" /><space/>
+<button id = "5" label="5" /><space/>
+<button id = "6" label="6" /><space/> 
+<button id = "sub" label = "-" /> <separator/>
+
+<button id = "7" label="7" /><space/>
+<button id = "8" label="8" /><space/>
+<button id = "9" label="9" /><space/>
+<button id = "mult" label = "X" /> <separator/>
+
+<button id = "clear" label="AC" /><space/>
+<button id = "0" label="0" /><space/>
+<button id = "calculate" label="=" /><space/>
+<button id = "div" label = "/" /> <separator/>
+
+</window>
+<!-- 
+<window>
+        <checkbox label="Change Orientation" onCheck='fsb.orient = self.checked?"vertical":"horizontal" ' />
+        <fisheyebar id="fsb" style="position:absolute; margin:80px 150px; background-color:pink; ">
+            <fisheye image="Images/img2.jpg"  />
+            <fisheye image="Images/img5.jpg"  />
+            <fisheye image="Images/img1.jpg"  />
+            <fisheye image="Images/img4.jpg"  />
+            <fisheye image="Images/img3.jpg" />
+        </fisheyebar>
+
+    </window> -->
+</zk>

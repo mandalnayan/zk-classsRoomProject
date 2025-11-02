@@ -1,0 +1,36 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+	<hbox 
+		apply="com.iispl.controller.UserComposer" width = "90%" height = "100%" pack = "end" align = "center">
+		
+		<listbox id="userLsb"
+			 emptyMessage="No Records found"
+			 mold="paging"
+			 pageSize="6"
+			 height="400px"
+			 width="500px"
+			  sizedByContent="true"
+			   checkmark="false"  
+			 zindex="1"
+			  >
+			<listhead>
+				<listheader label="ID" sort="auto" />
+				<listheader label="Name" sort="auto" />
+				<listheader label="Mobile No" />
+				<listheader label="Email" />
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell label="${each[0]}" />
+					<listcell label="${each[1] }" />
+					<listcell label="${each[2] }" />
+					<listcell label="${each[3] }" />
+				</listitem>
+			</template>
+
+		</listbox>
+
+
+	</hbox>
+</zk>

@@ -1,0 +1,58 @@
+<?page title="Registration" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<html>
+		
+		<![CDATA[ <head> <style> .title { font-size: 20px; font-weight:
+		bold; } .title-hd { font-size: 25px; font-weight: bold;
+
+		} </style> </head> ]]>		
+		
+	</html>
+
+	<hbox pack="center" align="center" width="100%" height="100%"
+		style="box-shadow: 5px 5px 10px #888888;"
+		apply="com.iispl.controller.RegistrationFormComposer">
+
+		<grid width="500px">
+			<columns>
+				<column style="text-align: center;">
+					<label class="title-hd" value="Registration" />
+				</column>
+			</columns>
+			<rows>
+				<row style="box-shadow: 5px 10px #888888;">
+					<label class="title" value="Name" width="80px" />
+					<textbox type="text" id="tName"
+						placeholder="Enter your full name" constraint="no empty"
+						style="box-shadow: 5px 10px #888888;" />
+				</row>
+				<row>
+					<label class="title" value="Email" />
+					<textbox id="tEmail" type="text"
+						constraint="no empty" placeholder="Enter your email"
+						style="box-shadow: 5px 10px #888888;" />
+				</row>
+				<row>
+					<label class="title" value="Mobile No" />
+					<textbox id="tMobNo" placeholder="Enter your mobile"
+						style="box-shadow: 5px 10px #888888;" />
+				</row>
+				<row>
+					<label class="title" value="Password" />
+					<textbox type = "password" id="tPass"
+						placeholder="Enter strong passowrd"
+						style="box-shadow: 5px 10px #888888;" />
+				</row>
+				<row align="left">
+					<label class="title" value="Conform Password" />
+					<textbox id="tPass2" placeholder="Renter password"
+						style="box-shadow: 5px 10px #888888;" />
+				</row>
+				<!-- Submit Button -->
+				<row align="center">
+					<button label="Submit" id="submitRegForm" />
+				</row>
+			</rows>
+		</grid>
+	</hbox>
+</zk>
