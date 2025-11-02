@@ -189,7 +189,7 @@ public class EventQueueTicTacToeController extends SelectorComposer<Vbox> implem
                 : "background-color: #9eec9b; font-size: 30px;");    
     }
     
-/**Reset all button
+/**Reset all button into thier initial state
  * 
  */
     public void resetAllButton() {
@@ -207,7 +207,7 @@ public class EventQueueTicTacToeController extends SelectorComposer<Vbox> implem
     }
     
     /**
-     * Enable buttons only for the active player
+     * Enable buttons only for the active player 
      */
     private void toggleButtonsForPlayer(String activePlayer) {
         boolean isMyTurn = currentPlayer.equals(activePlayer);
